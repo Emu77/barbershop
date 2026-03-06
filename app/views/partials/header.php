@@ -1,0 +1,54 @@
+<?php
+$base = "/barbershop/public";
+$current = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); // z.B. index.php
+if ($current === "" || $current === "public") $current = "index.php"; // Fallback
+function navActive(string $file, string $current): string {
+  return $file === $current ? " active" : "";
+}
+?>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><?= htmlspecialchars($title ?? "BarberShop") ?></title>
+
+  <!-- Bootstrap (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- eigenes CSS -->
+  <link rel="stylesheet" href="<?= $base ?>/assets/css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="<?= $base ?>/index.php">BarberShop</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+        <a class="nav-link<?= navActive('index.php', $current) ?>" href="<?= $base ?>/index.php">Start</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link<?= navActive('services.php', $current) ?>" href="<?= $base ?>/services.php">Leistungen</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link<?= navActive('team.php', $current) ?>" href="<?= $base ?>/team.php">Team</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link<?= navActive('booking.php', $current) ?>" href="<?= $base ?>/booking.php">Termin buchen</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link<?= navActive('login.php', $current) ?>" href="<?= $base ?>/login.php">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container my-4">

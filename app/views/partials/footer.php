@@ -8,9 +8,9 @@ $base = "/barbershop/public";
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
     <div>© <?= date('Y') ?> BarberShop</div>
     <div class="small">
-      <a class="text-decoration-none text-light" href="#">Impressum</a>
-      <span class="mx-2">|</span>
-      <a class="text-decoration-none text-light" href="#">Datenschutz</a>
+    <a class="text-decoration-none text-light" href="<?= $base ?>/impressum.php">Impressum</a>
+    <span class="mx-2">|</span>
+    <a class="text-decoration-none text-light" href="<?= $base ?>/datenschutz.php">Datenschutz</a>
     </div>
   </div>
 </footer>

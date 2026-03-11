@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 $title = "Leistungen – Barbershop";
 $base = "/barbershop/public";
+=======
+require __DIR__ . '/../app/config/config.php';
+$title = "Leistungen – Barbershop";
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
 require __DIR__ . "/../app/views/partials/header.php";
 
 $services = [
@@ -15,7 +20,11 @@ $services = [
 
 <div class="d-flex align-items-center justify-content-between mb-4">
   <h1 class="h3 mb-0">Leistungen</h1>
+<<<<<<< HEAD
   <a class="btn btn-outline-primary" href="<?= $base ?>/booking.php">Termin buchen</a>
+=======
+  <a class="btn btn-outline-primary" href="<?= BASE_URL ?>/booking.php">Termin buchen</a>
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
 </div>
 
 <div class="row g-3">
@@ -31,7 +40,11 @@ $services = [
           </div>
         </div>
         <div class="card-footer bg-white border-0 pt-0">
+<<<<<<< HEAD
           <a class="btn btn-primary w-100" href="<?= $base ?>/booking.php">Diesen Service buchen</a>
+=======
+          <a class="btn btn-primary w-100" href="<?= BASE_URL ?>/booking.php">Diesen Service buchen</a>
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
         </div>
       </div>
     </div>

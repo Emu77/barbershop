@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 $title = "Datenschutz – Barbershop";
 $base = "/barbershop/public";
+=======
+require __DIR__ . '/../app/config/config.php';
+$title = "Datenschutz – Barbershop";
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
 require __DIR__ . "/../app/views/partials/header.php";
 ?>
 

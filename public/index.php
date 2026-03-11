@@ -1,6 +1,11 @@
 <?php
+<<<<<<< HEAD
 $title = "Barbershop";
 $base = "/barbershop/public";
+=======
+require __DIR__ . "/../app/config/config.php";
+$title = "BarberShop";
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
 require __DIR__ . "/../app/views/partials/header.php";
 ?>
 
@@ -9,8 +14,13 @@ require __DIR__ . "/../app/views/partials/header.php";
   <p class="lead mb-4">
     Sauberer Schnitt, klare Konturen, entspannte Atmosphäre. Buche deinen Termin in wenigen Klicks.
   </p>
+<<<<<<< HEAD
   <a class="btn btn-primary btn-lg" href="<?= $base ?>/booking.php">Jetzt Termin buchen</a>
   <a class="btn btn-outline-light btn-lg ms-2" href="<?= $base ?>/services.php">Leistungen ansehen</a>
+=======
+  <a class="btn btn-primary btn-lg" href="<?= BASE_URL ?>/booking.php">Jetzt Termin buchen</a>
+  <a class="btn btn-outline-light btn-lg ms-2" href="<?= BASE_URL ?>/services.php">Leistungen ansehen</a>
+>>>>>>> 0b8fdd1 (Initial upload from Windows path)
 </section>
 
 <section class="mt-5">

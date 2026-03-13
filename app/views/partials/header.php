@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-$base = "/barbershop/public";
-=======
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 $current = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)); // z.B. index.php
 if ($current === "" || $current === "public") $current = "index.php"; // Fallback
 function navActive(string $file, string $current): string {
@@ -18,22 +14,12 @@ function navActive(string $file, string $current): string {
 
   <!-- Bootstrap (CDN) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<<<<<<< HEAD
-
-  <!-- eigenes CSS -->
-  <link rel="stylesheet" href="<?= $base ?>/assets/css/style.css">
-=======
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-<<<<<<< HEAD
-    <a class="navbar-brand fw-bold" href="<?= $base ?>/index.php">BarberShop</a>
-=======
     <a class="navbar-brand fw-bold" href="<?= BASE_URL ?>/index.php">BarberShop</a>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
       <span class="navbar-toggler-icon"></span>
@@ -42,22 +28,6 @@ function navActive(string $file, string $current): string {
     <div class="collapse navbar-collapse" id="nav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-<<<<<<< HEAD
-        <a class="nav-link<?= navActive('index.php', $current) ?>" href="<?= $base ?>/index.php">Start</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link<?= navActive('services.php', $current) ?>" href="<?= $base ?>/services.php">Leistungen</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link<?= navActive('team.php', $current) ?>" href="<?= $base ?>/team.php">Team</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link<?= navActive('booking.php', $current) ?>" href="<?= $base ?>/booking.php">Termin buchen</a>
-        </li>
-        <li class="nav-item">
-        <a class="nav-link<?= navActive('login.php', $current) ?>" href="<?= $base ?>/login.php">Login</a>
-        </li>
-=======
         <a class="nav-link<?= navActive('index.php', $current) ?>" href="<?= BASE_URL ?>/index.php">Start</a>
         </li>
         <li class="nav-item">
@@ -93,7 +63,6 @@ function navActive(string $file, string $current): string {
             <a class="nav-link<?= navActive('login.php', $current) ?>" href="<?= BASE_URL ?>/login.php">Login</a>
           </li>
         <?php endif; ?>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
       </ul>
     </div>
   </div>

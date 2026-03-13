@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-$title = "Login – Barbershop";
-$base = "/barbershop/public";
-=======
 require __DIR__ . '/../app/config/config.php';
 session_start();
 
@@ -25,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'] ?? '')) {
         $fehler = "Ungültiges Sicherheits-Token. Bitte Seite neu laden.";
     } else {
-        $email    = trim($_POST['email']    ?? '');
+        $email    = trim($_POST['email'] ?? '');
         $passwort = trim($_POST['passwort'] ?? '');
 
         if ($email === '' || $passwort === '') {
@@ -68,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 require __DIR__ . "/../app/views/partials/header.php";
 ?>
 
@@ -76,15 +71,6 @@ require __DIR__ . "/../app/views/partials/header.php";
   <div class="col-md-7 col-lg-5">
     <div class="card shadow-sm">
       <div class="card-body p-4">
-<<<<<<< HEAD
-        <h1 class="h4 mb-2">Login</h1>
-        <p class="text-muted mb-4">Melde dich an, um Termine und Einstellungen zu verwalten.</p>
-
-        <form method="post" action="#">
-          <div class="mb-3">
-            <label class="form-label">E-Mail</label>
-            <input type="email" name="email" class="form-control" placeholder="name@barbershop.de" required>
-=======
         <h1 class="h4 mb-2">Anmelden</h1>
         <p class="text-muted mb-4">Melde dich an, um deine Termine zu verwalten.</p>
 
@@ -100,49 +86,24 @@ require __DIR__ . "/../app/views/partials/header.php";
             <input type="email" name="email" class="form-control"
                    placeholder="name@beispiel.de"
                    value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" required autofocus>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
           </div>
 
           <div class="mb-3">
             <label class="form-label">Passwort</label>
-<<<<<<< HEAD
-            <input type="password" name="password" class="form-control" placeholder="••••••••" required>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="1" id="remember" name="remember">
-              <label class="form-check-label" for="remember">Angemeldet bleiben</label>
-            </div>
-            <a class="small text-decoration-none" href="#">Passwort vergessen?</a>
-          </div>
-
-          <button class="btn btn-primary w-100" type="submit">Anmelden</button>
-
-          <div class="text-muted small mt-3">
-            Demo-Hinweis: Später prüfen wir Benutzer + Rollen (Admin/Mitarbeiter).
-          </div>
-=======
             <input type="password" name="passwort" class="form-control" placeholder="••••••••" required>
           </div>
 
           <button class="btn btn-warning fw-semibold w-100 mt-1" type="submit">Anmelden</button>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
         </form>
       </div>
     </div>
 
-<<<<<<< HEAD
-    <div class="text-center mt-3">
-      <a class="text-decoration-none" href="<?= $base ?>/index.php">← Zurück zur Startseite</a>
-=======
     <div class="text-center mt-3 small">
       Noch kein Konto?
       <a class="text-decoration-none fw-semibold" href="<?= BASE_URL ?>/register.php">Jetzt registrieren</a>
     </div>
     <div class="text-center mt-2">
       <a class="text-decoration-none text-muted small" href="<?= BASE_URL ?>/index.php">← Zurück zur Startseite</a>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
     </div>
   </div>
 </div>

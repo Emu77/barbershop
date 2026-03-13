@@ -1,12 +1,4 @@
 <?php
-<<<<<<< HEAD
-$title = "Termin buchen – Barbershop";
-$base = "/barbershop/public";
-require __DIR__ . "/../app/views/partials/header.php";
-
-$services = ["Bart-Rasur", "Kopfrasur", "Kombi", "Konturen", "Bartpflege", "Augenbrauen"];
-$staff    = ["Alex", "Sam", "Mika"];
-=======
 require __DIR__ . '/../app/config/config.php';
 session_start();
 
@@ -111,34 +103,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 require __DIR__ . "/../app/views/partials/header.php";
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 ?>
 
 <h1 class="h3 mb-4">Termin buchen</h1>
 
-<<<<<<< HEAD
-<div class="row g-4">
-  <div class="col-lg-7">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <form method="post" action="#">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label">Name</label>
-              <input class="form-control" name="name" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Telefon</label>
-              <input class="form-control" name="phone" placeholder="z. B. 0176..." required>
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Leistung</label>
-              <select class="form-select" name="service" required>
-                <option value="" selected disabled>Bitte wählen…</option>
-                <?php foreach ($services as $s): ?>
-                  <option><?= htmlspecialchars($s) ?></option>
-=======
 <?php if (!$eingeloggt): ?>
   <div class="alert alert-warning d-flex align-items-start gap-3">
     <span style="font-size:1.5rem">ℹ️</span>
@@ -212,19 +180,10 @@ require __DIR__ . "/../app/views/partials/header.php";
                     <?= htmlspecialchars($l['name']) ?>
                     (<?= $l['dauer_min'] ?> Min. · <?= number_format($l['preis'], 2, ',', '.') ?> €)
                   </option>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
                 <?php endforeach; ?>
               </select>
             </div>
 
-<<<<<<< HEAD
-            <div class="col-md-6">
-              <label class="form-label">Mitarbeiter</label>
-              <select class="form-select" name="staff" required>
-                <option value="" selected disabled>Bitte wählen…</option>
-                <?php foreach ($staff as $m): ?>
-                  <option><?= htmlspecialchars($m) ?></option>
-=======
             <!-- Mitarbeiter -->
             <div class="col-md-6">
               <label class="form-label">Mitarbeiter <span class="text-danger">*</span></label>
@@ -236,34 +195,10 @@ require __DIR__ . "/../app/views/partials/header.php";
                     <?= htmlspecialchars($m['anzeigename']) ?>
                     <?= $m['rolle_beschr'] ? '– ' . htmlspecialchars($m['rolle_beschr']) : '' ?>
                   </option>
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
                 <?php endforeach; ?>
               </select>
             </div>
 
-<<<<<<< HEAD
-            <div class="col-md-6">
-              <label class="form-label">Datum</label>
-              <input type="date" class="form-control" name="date" required>
-            </div>
-
-            <div class="col-md-6">
-              <label class="form-label">Uhrzeit</label>
-              <input type="time" class="form-control" name="time" required>
-            </div>
-
-            <div class="col-12">
-              <label class="form-label">Notiz (optional)</label>
-              <textarea class="form-control" name="note" rows="3" placeholder="Wünsche, Hinweise…"></textarea>
-            </div>
-
-            <div class="col-12">
-              <button class="btn btn-warning fw-semibold w-100" type="submit">Termin anfragen</button>
-              <div class="text-muted small mt-2">
-                Nächster Schritt: Verfügbarkeiten automatisch prüfen & speichern.
-              </div>
-            </div>
-=======
             <!-- Datum -->
             <div class="col-md-6">
               <label class="form-label">Datum <span class="text-danger">*</span></label>
@@ -297,33 +232,12 @@ require __DIR__ . "/../app/views/partials/header.php";
               </p>
             </div>
 
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
           </div>
         </form>
       </div>
     </div>
   </div>
 
-<<<<<<< HEAD
-  <div class="col-lg-5">
-    <div class="card shadow-sm">
-      <div class="card-body">
-        <h2 class="h5">Infos</h2>
-        <div class="text-muted">Musterstraße 1, 12345 Berlin</div>
-        <div class="text-muted">Mo–Sa 10–20 Uhr</div>
-      </div>
-    </div>
-
-    <div class="card shadow-sm mt-3">
-      <div class="card-body">
-        <h2 class="h5">Tipp</h2>
-        <p class="text-muted mb-0">
-          Später zeigen wir dir hier freie Slots (abhängig von Mitarbeiter, Dauer, Überschneidungen).
-        </p>
-      </div>
-    </div>
-  </div>
-=======
   <!-- ── Seitenleiste ── -->
   <div class="col-lg-5">
     <div class="card shadow-sm">
@@ -377,7 +291,6 @@ require __DIR__ . "/../app/views/partials/header.php";
     <?php endif; ?>
   </div>
 
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 </div>
 
 <?php require __DIR__ . "/../app/views/partials/footer.php"; ?>

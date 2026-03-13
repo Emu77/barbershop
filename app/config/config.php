@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['HTTP_HOST'] === 'localhost') {
-    define('BASE_URL', '/kronisoft/projekte/barbershop/public');
+    define('BASE_URL', '/barbershop/public');
 } else {
-    define('BASE_URL', '/projekte/barbershop/public');
+    define('BASE_URL', '/barbershop/public');
 }
 
 // Datenbank-Konfiguration

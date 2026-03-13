@@ -1,11 +1,6 @@
 <?php
-<<<<<<< HEAD
-$title = "Team – Barbershop";
-$base = "/barbershop/public";
-=======
 require __DIR__ . '/../app/config/config.php';
 $title = "Team – Barbershop";
->>>>>>> 0b8fdd1 (Initial upload from Windows path)
 require __DIR__ . "/../app/views/partials/header.php";
 
 $team = [

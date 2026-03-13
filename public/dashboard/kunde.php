@@ -10,13 +10,13 @@ try {
     $pdo   = getDB();
     $stmt  = $pdo->prepare("
         SELECT t.id, t.termin_datum, t.termin_uhrzeit, t.notiz, t.status, t.erstellt_am,
-               l.name  AS leistung,  l.preis, l.dauer_min,
+               l.name AS leistung, l.preis, l.dauer_min,
                m.anzeigename AS mitarbeiter
-        FROM   termine t
-        JOIN   leistungen  l ON l.id = t.leistung_id
-        JOIN   mitarbeiter m ON m.id = t.mitarbeiter_id
-        WHERE  t.benutzer_id = :uid
-        ORDER  BY t.termin_datum DESC, t.termin_uhrzeit DESC
+        FROM termine t
+        JOIN leistungen l ON l.id = t.leistung_id
+        JOIN mitarbeiter m ON m.id = t.mitarbeiter_id
+        WHERE t.benutzer_id = :uid
+        ORDER BY t.termin_datum DESC, t.termin_uhrzeit DESC
     ");
     $stmt->execute([':uid' => $_SESSION['benutzer_id']]);
     $termine = $stmt->fetchAll();
@@ -27,11 +27,22 @@ try {
 
 // Status-Badge Farben
 $statusBadge = [
-    'anfrage'      => 'warning',
-    'bestaetigt'   => 'success',
-    'abgeschlossen'=> 'secondary',
-    'storniert'    => 'danger',
+    'anfrage'       => 'warning',
+    'bestaetigt'    => 'success',
+    'abgeschlossen' => 'secondary',
+    'storniert'     => 'danger',
 ];
+
+function statusText(string $status): string
+{
+    return match (strtolower($status)) {
+        'anfrage'       => 'Wartet auf Bestätigung',
+        'bestaetigt'    => 'Bestätigt',
+        'abgeschlossen' => 'Abgeschlossen',
+        'storniert'     => 'Storniert',
+        default         => ucfirst($status),
+    };
+}
 
 require __DIR__ . '/../../app/views/partials/header.php';
 ?>
@@ -82,7 +93,7 @@ require __DIR__ . '/../../app/views/partials/header.php';
               <td><?= number_format($t['preis'], 2, ',', '.') ?> €</td>
               <td>
                 <span class="badge bg-<?= $statusBadge[$t['status']] ?? 'secondary' ?>">
-                  <?= htmlspecialchars(ucfirst($t['status'])) ?>
+                  <?= htmlspecialchars(statusText($t['status'])) ?>
                 </span>
               </td>
             </tr>
